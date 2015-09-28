@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+	<h1>JavaScript Can Validate Input</h1>
+
+	<p>Please input a number between 1 and 10:</p>
+
+	<input id="numb" type="number">
+	<button type="button" onclick="myFunction()">Submit</button>
+	<br>
+	<p id="demo"></p>
+	<br>
+	<br>
+
+
+	<input id="numb1">
+	<button type="button" onclick="myFunction1()">Submit</button>
+	<br>
+	<p id="demo1"></p>
+
+	<script>
+		function myFunction() {
+			var x, text;
+
+			// Get the value of the input field with id="numb"
+			x = document.getElementById("numb").value;
+
+	// if x is a character than it will be blank bcoz above the type is number				
+	// so x returns undefined
+	
+			// If x is Not a Number or less than one or greater than 10
+			if (isNaN(x) || x == "") {					// here x== "" means undefined/blank
+				text = "Input not a number";
+			} else if (x<1||x>10) {
+				//else if (isNaN(x) || x < 1 || x > 10) {
+				text = "Input not valid";
+			} else {
+				text = "Input OK";
+			}
+
+			document.getElementById("demo").innerHTML = text;
+		}
+
+		function myFunction1() {
+
+			var x1, text1;
+			x1 = document.getElementById("numb1").value;
+
+			if (isNaN(x1)) {
+				text1 = "Input not a number";
+			} else if (x1<1||x1>10) {
+				//else if (isNaN(x) || x < 1 || x > 10) {
+				text1 = "Input not valid";
+			} else {
+				text1 = "Input OK";
+			}
+
+			document.getElementById("demo1").innerHTML = text1;
+		}
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!-- The document.write() method should be used only for testing. -->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Javascript output </h1>
+<p> Writing into an html output </p>
+
+
+<!--Using document.write() after an HTML document is fully loaded, will delete all existing HTML -->
+<button type="button" onclick="document.write(5 + 6)">Try it</button>
+
+<script>
+document.write("<br/>" +"<br/>")	
+document.write(6+9);
+document.write("<br/>")				// This will print with loading of page i.e. beforre the button is clicked
+document.write("Hello");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>The typeof operator returns the type of a variable or an expression.</p>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = 
+typeof "john" + "<br>" + 
+typeof 3.14 + "<br>" +
+typeof false + "<br>" +
+typeof [1,2,3,4] + "<br>" +
+typeof {name:'john', age:34};
+
+// In JavaScript, an array is a special type of object. Therefore typeof [1,2,3,4] returns object. 
+
+var a;	// A variable without a value, has the value undefined. The typeof is also undefined.
+
+var car = "";                // The value is "", the typeof is string
+// An empty value has nothing to do with undefined.
+// An empty string variable has both a value and a type.
+
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>A local variable can only be accessed from within the function where it was declared.</p>
+
+<p id="demo"></p>
+
+<script>
+myFunction();
+document.getElementById("demo").innerHTML =
+"I can display " + typeof carName;
+
+function myFunction() {
+    var carName = "Volvo";
+}
+</script>
+
+</body>
+</html>
+
+

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Hello World</title>
+</head>
+<body>
+
+<p>There are two different ways to access an object property: </p>
+<p>You can use person.property or person["property"].</p>
+<h4>This is second way </h4>
+<br>
+<p id="demo"></p>
+
+<script>
+var person = {firstName:"John",lastName:"Doe",id:5566};
+
+document.getElementById("demo").innerHTML = person["firstName"] + " " + person["lastName"]+ " has id: "+person["id"];
+</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HELLO</title>
+</head>
+<body>
+
+<button onclick = "getElementById('demo').innerHTML = Date()" > Show Time </button>
+
+<!-- If Here in demo -- using double quotes("demo") wonn't run bcoz,
+
+it misunderstands and closes the first inverted comma "getElementById("demo").innerHTML = Date()"
+													  x               x
+The solution is to use \ (escape character).													  
+
+So, here the JavaScript code changes the content of the element with id="demo".
+ -->
+
+<p id = "demo"> Here the time will be shown  </p>
+
+</body>
+</html>

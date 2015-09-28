@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Vivek</title>
+</head>
+<body>
+
+<h2> Add 2 numbers </h2>
+<p>Please input first number</p>
+	<input id="numb">
+	
+<p>Please input other number</p>
+	<input id="numb1"><br><br>
+
+	<button type="button" onclick="myFunction()">ADD</button>	
+
+<br><br>
+<p id="demo"></p>
+
+<script>
+	function myFunction() {
+		var x,y, ans;
+			
+		x = document.getElementById("numb").value;
+		y = document.getElementById("numb1").value;
+
+		ans = Number(x)+Number(y);				// Number(); -- convert variables to numbers
+
+		document.getElementById("demo").innerHTML = ans;	
+	}
+
+</script>
+</body>
+</html>

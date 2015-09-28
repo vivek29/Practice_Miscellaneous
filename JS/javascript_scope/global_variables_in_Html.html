@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>
+In HTML, all global variables will become a window variables.
+</p>
+
+<p id="demo"></p>
+
+<script>
+myFunction();
+document.getElementById("demo").innerHTML =
+"I can display " + window.carName;					// using window object
+
+// In HTML, the global scope is the window object: All global variables belong to the window object. 
+
+function myFunction() {
+    carName = "Volvo";						// not declared
+}
+</script>
+
+</body>
+</html>
+
+

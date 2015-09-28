@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p id="demo"></p>
+
+<script>
+var person = {							// JavaScript objects are written with curly braces.
+    firstName : "John",
+    lastName  : "Doe",
+    age       : 50,
+    eyeColor  : "blue"
+};
+/* Objects are variables too. But objects can contain many values.
+The values are written as name:value pairs (name and value separated by a colon).
+The name:values pairs (in JavaScript objects) are called properties.
+JavaScript objects are containers for named values, called properties and methods.
+*/
+
+// The object (person) in the example above has 4 properties: firstName, lastName, age, and eyeColor.
+
+document.getElementById("demo").innerHTML =
+	person.firstName +" " + person.lastName + " is " + person.age + " years old"+
+	"and his eyecolor is "+ person.eyeColor;
+
+</script>
+
+</body>
+</html>

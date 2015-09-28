@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+    
+<!-- <beans default-init-method="myinit" default-destroy-method="mydestroy">	-->
+     <bean id="triangle" class = "com.test.spring.SpringTest.Triangle"> 
+
+<!--     <bean id="triangle" class = "com.test.spring.SpringTest.Triangle" autowire="byName">	
+
+			1. When using autowire, byName matches bean id with the member variable and autowires those beans
+			2. While autowire byType works if we have only one member variable and 1 bean of a particular type
+			The type is basically the class for which bean is defined, and if this class matches the class the member variable is defined for, it autowires the bean
+			Obviously, byType won't work if there are more than 1 bean of a type(here Point)
+			3. Another way is autowire by "constructor", somewhat same as type, but instead of setter injection, it does constructor injection.			
+	-->
+
+<!--     <bean id="triangle" class = "com.test.spring.SpringTest.Triangle" autowire="byName" init-method="myinit" destroy-method="mydestroy">
+	-->
+	
+		<property name="pointA" ref="pointA" />
+        <property name="pointB" ref="pointB" />
+        <property name="pointC" ref="pointC" /> 
+     
+        <!-- <property name = "points">
+            <list>
+                <ref bean="point1" />
+                <ref bean="point2" />
+                <ref bean="point3" />
+            </list>
+        </property> -->
+    </bean>
+    
+    <bean id="pointA" class = "com.test.spring.SpringTest.Point">
+        <property name="x" value="0" />
+        <property name="y" value="0" />
+        
+<!--    <property name="x" value="${pointA.pointX}" />
+        <property name="y" value="${pointA.pointY}" /> -->    
+    </bean>
+    
+    <bean id="pointB" class = "com.test.spring.SpringTest.Point">
+        <property name="x" value="20" />
+        <property name="y" value="0" />
+    </bean>
+    
+   	<bean id="pointC" class = "com.test.spring.SpringTest.Point">
+        <property name="x" value="0" />
+        <property name="y" value="20" />
+    </bean>
+    
+   	<bean id="center" class = "com.test.spring.SpringTest.Point">
+        <property name="x" value="100" />
+        <property name="y" value="100" />
+    </bean>
+    
+<!--    	<bean class = "com.test.spring.SpringTest.DisplayNameBeanPostProcessor" />  -->            
+
+<!--		<bean class = "com.test.spring.SpringTest.MyBeanFactoryPostProcessor" /> 	-->
+
+<!--  Reading values from pointsconfig.properties file...
+<bean class = "org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<property name="locations" value="pointsconfig.properties">
+	</property>
+</bean>
+-->
+
+<!--   <bean id="circle" class = "com.test.spring.SpringTest.Circle"> 
+ 		<property name="center" ref="pointA" />
+ 		<property name="center" ref="center" />
+ </bean>
+ -->  
+
+<bean id="circle" class = "com.test.spring.SpringTest.Circle"> 
+</bean>   
+
+<!-- Specify all the properties file, from which text is to be read. -->
+<bean id="messageSource" class = "org.springframework.context.support.ResourceBundleMessageSource">
+	<property name="basenames">
+    	<list>
+    	    <value>mymessages</value>
+    	</list>
+	</property>    
+</bean>
+
+
+<!--  <bean class = "org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"></bean> -->
+  	
+   	<context:component-scan base-package = "com.test.spring.SpringTest"></context:component-scan>
+ 	<context:annotation-config></context:annotation-config>
+	
+</beans>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HELLO</title>
+</head>
+<body>
+
+<p> Accessing Object Methods </p>
+<p>An object method is a function definition, stored as a property value.</p>
+<br>
+<p id = "demo">  </p>
+
+<script>
+
+var person = {firstName: "Vivek",
+		lastName: "Maheshwari",
+		city: "Indore",
+		fullName: function(){
+			return this.firstName + " " + this.lastName;
+		}
+};
+
+document.getElementById("demo").innerHTML = person.fullName() + " is from " + person.city;
+
+</script>
+</body>
+</html>

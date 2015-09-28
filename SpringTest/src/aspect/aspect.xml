@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+         
+<aop:aspectj-autoproxy />
+
+<bean id = "triangle" class="com.test.spring.model.Triangle">
+    <property name="name" value="Triangle name" />
+</bean>    
+    
+<bean id = "circle" class="com.test.spring.model.Circle">
+    <property name="name" value="Circle name" />
+</bean>    
+
+<bean id = "shapeService" class="com.test.spring.service.ShapeService" autowire="byName">
+</bean>
+    
+<bean id = "loggingAspect" class="com.test.spring.aop.LoggingAspect">
+</bean>
+
+<!-- 			AOP XML Configuration(video 34)
+<aop:config>
+    <aop:aspect id = "loggingAspect" ref = "loggingAspect">
+    
+    <aop:pointcut id="allGetters" expression="execution(* get*())"/>    
+    <aop:before pointcut-ref="allGetters" method="SecondAdvice"/>    
+    
+    		OR -- instead have an inline pointcut expression
+    <aop:before pointcut="execution(* get*())" method="SecondAdvice"/>    
+    </aop:aspect>    
+</aop:config>
+ -->
+    
+</beans>    
